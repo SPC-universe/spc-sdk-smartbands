@@ -1,8 +1,8 @@
-#Documentación sdk-smartbands-ios
+# Documentación sdk-smartbands-ios
 
 Este SDK contempla métodos para conexión, configuración y obtención de datos de los dispositivos Fit Pro 9614N, Fit Pulse 9615N y Smartee Training 9616N para la plataforma iOS.
 
-##PROTOCOLOS
+## PROTOCOLOS
 * @protocol IWBLEDiscoverDelegate
     * - (void)IWBLEDidDiscoverDeviceWithMAC:(IwownBlePeripheral *)iwDevice
 
@@ -41,9 +41,9 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
     - (void)responseOfScheduleInfoGetting:(NSDictionary *)dict;
 
 
-##CLASE BLELib3
+## CLASE BLELib3
  
-###LLAMADAS DE CONEXIÓN
+### LLAMADAS DE CONEXIÓN
 * - (void)scanDevice;
 * - (void)stopScan;
 * - (void)connectDevice:(IwownBlePeripheral *)dev;
@@ -52,7 +52,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
 * - (NSArray *)retrieveConnectedPeripherals;
 * - (void)debindFromSystem;
 
-##LLAMADAS DE OBTENCIÓN DE DATOS DEL DISPOSITIVO:
+## LLAMADAS DE OBTENCIÓN DE DATOS DEL DISPOSITIVO:
 
     - (void)getDeviceInfo;
         Callback
@@ -90,7 +90,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
     - (void)deviceReset;
 
 
-##PROTOCOLO DE CONFIGURACIÓN Y OBTENCIÓN DE DATOS
+## PROTOCOLO DE CONFIGURACIÓN Y OBTENCIÓN DE DATOS
 
 @protocol BLELib3Delegate
     - (void)setBLEParameterAfterConnect;
@@ -100,9 +100,9 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
 
 
 
-##LLAMADAS DE CONFIGURACIÓN 
+## LLAMADAS DE CONFIGURACIÓN 
 
-###ALARMA DE SEDENTARIO:
+### ALARMA DE SEDENTARIO:
     Se permite configurar un unico alarma de sedentario con los siguientes parametros:
     IwownSedentary *sedentaryModel
                     [sedentaryModel setStartHour:<int>];
@@ -121,7 +121,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
         - (void)setAlertMotionReminder:(IwownSedentary *)sedentaryModel;
 
 
-###PERSONAL INFORMATION
+### PERSONAL INFORMATION
     Para configurar la información personal, hay que crear un objeto del tipo 'IwownPersonal' y configurarle llamando los siguientes métodos:
             IwownPersonal *iwPersonal 
                                 [iwPersonal setGender: <0: man, 1:woman ];
@@ -132,7 +132,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
      Y enviar el comando al dispositivo:      
           - (void)setPersonalInfo:(IwownPersonal *)personalModel;
 
-###ALARMA
+### ALARMA
     Para configurar alarmas, hay que crear un objeto del tipo 'IwownClock' y configurarle llamando los siguientes métodos:
     [clockModel setClockId:index];          // index: índice identificador de la alarma. Su valor varia de 0 a 7, permitiendo configurar hasta 8 alarmas
     [clockModel setSwitchStatus:status];    // Booleano: true para que suene la alarma
@@ -158,7 +158,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
             - repeticiones: si el flag de repetición está a 1, la alarma repite semanalmente, si está a off, es una alarma puntual
 
 
-###CONFIGURACIONES DEL DISPOSITIVO
+### CONFIGURACIONES DEL DISPOSITIVO
     Es posible configurar algunas opciones del dispositivo a través del método: 
         - (void)setFirmWareOption:(IwownHWOption *)hwOptionModel;
 
@@ -188,7 +188,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
                     braceletLanguageSimpleChinese
 
 
-###SET SPORT TARGET
+### SET SPORT TARGET
     Este comando activa los deportes en el dispositivo, el deporte WALKING (número 1) es obligatorio y siempre debe ser activado, se permite como máximo 5 deportes activos al día siendo el primer el deporte WALKING (1).
         - (void)setSportTarget:(NSMutableArray *)targetArray;
             el parametro 'targetArray' es un array con 7 posiciones correspondientes a los 7 días de la semana empezando por el lunes.
@@ -201,7 +201,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
 
 ???- (void)pushStr:(NSString *)str; 
 
-###SCHEDULE
+### SCHEDULE
     Se puede crear hasta 4 schedule al día y no puede haber dos en la misma fecha/hora.
         - (void)writeSchedule:(IwownSchedule *)sModel; //write schedule
         
@@ -233,7 +233,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
         - (void)readSchedule:(IwownSchedule *)sModel; //get specified schedule
             también retorna a través del método responseOfScheduleGetting, retorna 0 si el schedule no existe y 1 si el schedule existe
 
-###CÁMARA Y BUSCAR DISPOSITIVO
+### CÁMARA Y BUSCAR DISPOSITIVO
     Para activar el modo sacar foto, hay que llamar al método:
         - (void)setKeyNotify:(NSUInteger)keyNotify; 
         keyNotify:  1 - activar
@@ -246,9 +246,9 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
         - (void)notifyToSearchPhone;
 
 
-##APENDICE I
+## APENDICE I
 
-###CÓDIGO DE LOS DEPORTES PARA LOS DISPOSITIVOS TRAINING
+### CÓDIGO DE LOS DEPORTES PARA LOS DISPOSITIVOS TRAINING
 
       1   : 0x01 : walk
       2   : 0x02 : situp
@@ -275,7 +275,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
       144 : 0x90 : yoga
       145 : 0x91 : shuttlecock
 
-###CÓDIGO SLEEP TYPE Y SIGNIFICADO
+### CÓDIGO SLEEP TYPE Y SIGNIFICADO
 * 1: SleepTypeStartSleep
 * 2: SleepTypeEndSleep
 * 3: SleepTypeDeepSleep
