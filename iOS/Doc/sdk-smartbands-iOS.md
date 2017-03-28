@@ -5,7 +5,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
 ## Clase TrainingManager
 **TrainingManager** es la clase que centra las llamadas de búsqueda de dispositivos (scanDevice, stopScan, getDevices), conexión (connectDevice), estado de la conexión (currentState, isConnected, isBinded), desconexión (unConnectDevice, debind), llamadas para obtención de datos (getDeviceInfo, getSupportSportsList, getCurrentSportData, getHRDataOfHours, sportDataSwitchOn), devolución de los datos a través de notificaciones, llamada de configuración de los deportes activos en los dispositivos (setSportTarget) y llamada de reinicio del dispositivo (deviceReset). 
 
-**TrainingManager** implementa los protcolos definidos en la clase BLELib3 que es la clase que implementa la comunicación directa con los dispositivos Iwown:
+**TrainingManager** implementa los protcolos definidos en la clase BLELib3 que es la clase que implementa la comunicación directa con los dispositivos:
 
 ### PROTOCOLOS
 * @protocol IWBLEDiscoverDelegate
