@@ -7,7 +7,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
 
 **TrainingManager** implementa los protcolos definidos en la clase BLELib3 que es la clase que implementa la comunicación directa con los dispositivos:
 
-### PROTOCOLOS
+### Protocolos
 * @protocol IWBLEDiscoverDelegate
     * `- (void)IWBLEDidDiscoverDeviceWithMAC:(IwownBlePeripheral *)iwDevice;`
 
@@ -51,11 +51,11 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
 * esperar a las notificaciones 'DeviceFoundNotification', la notificación trae en el parámetro 'userInfo' un diccionario:
     - @"deviceId": iwDevice.uuidString
     - @"iwDevice": iwDevice
-    Dónde iwDevice es un objeto de la clase 'IwownBlePeripheral' que representa el dispositivo Bluetooth encontrado (ver IwownBlePeripheral.h para conocer sus propiedades )
- * llamar a [TrainingManager sharedInstance] `getDevices`: devuelve un array con todos los dispositivos encontrados hasta el momento, es un array con objetos de la clase 'IwownBlePeripheral'.
- * llamar a [TrainingManager sharedInstance] `connectDevice` pasando como parámetro un objeto del tipo 'IwownBlePeripheral'
- * esperar por la notificación de 'updateDeviceInfo' y 'updateBattery', ambas devuelven, en el parámetro object de la notificación, un objeto del tipo DeviceInfo (ver archivo DeviceInfo.h para conocer sus propiedades)
- * para chequear si el dispositivo sigue conectado, hay que llamar a [TrainingManager sharedInstance] `isConnected`
+Dónde iwDevice es un objeto de la clase 'IwownBlePeripheral' que representa el dispositivo Bluetooth encontrado (ver IwownBlePeripheral.h para conocer sus propiedades )
+* llamar a [TrainingManager sharedInstance] `getDevices`: devuelve un array con todos los dispositivos encontrados hasta el momento, es un array con objetos de la clase 'IwownBlePeripheral'.
+* llamar a [TrainingManager sharedInstance] `connectDevice` pasando como parámetro un objeto del tipo 'IwownBlePeripheral'
+* esperar por la notificación de 'updateDeviceInfo' y 'updateBattery', ambas devuelven, en el parámetro object de la notificación, un objeto del tipo DeviceInfo (ver archivo DeviceInfo.h para conocer sus propiedades)
+* para chequear si el dispositivo sigue conectado, hay que llamar a [TrainingManager sharedInstance] `isConnected`
 
 Cuando el dispositivo se conecta, el sdk automaticamente hace una sincronización con el dispositivo solicitando información de actividad, sueño y deporte.  
 
