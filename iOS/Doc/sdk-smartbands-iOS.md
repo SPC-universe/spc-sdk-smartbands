@@ -2,7 +2,8 @@
 
 Este SDK contempla métodos para conexión, configuración y obtención de datos de los dispositivos Fit Pro 9614N, Fit Pulse 9615N y Smartee Training 9616N para la plataforma iOS.
 
-## CLASE TrainingManager
+___
+## Clase TrainingManager
 **TrainingManager** es la clase que centra las llamadas de búsqueda de dispositivos (scanDevice, stopScan, getDevices), conexión (connectDevice), estado de la conexión (currentState, isConnected, isBinded), desconexión (unConnectDevice, debind), llamadas para obtención de datos (getDeviceInfo, getSupportSportsList, getCurrentSportData, getHRDataOfHours, sportDataSwitchOn), devolución de los datos a través de notificaciones, llamada de configuración de los deportes activos en los dispositivos Iwown (setSportTarget) y llamada de reinicio del dispositivo (deviceReset). 
 
 **TrainingManager** implementa los protcolos definidos en la clase BLELib3 que es la clase que implementa la comunicación directa con los dispositivos Iwown:
@@ -80,6 +81,7 @@ A través del protocolo BLELib3Delegate, cuyos métodos ya están implementados 
         + steps = <pasos>
         + week = < semana >;
         + year = < año >;
+
         Obs. los datos de fecha day, week, month e year en esta llamada no deben ser considerados, la fecha para **current** corresponde a hoy.
 
 * WholeDaySportDataNotification: totales de un día anterior a hoy. Esta notificación devuelve en el parámetro userInfo un diccionario con la siguiente información:
@@ -99,6 +101,7 @@ A través del protocolo BLELib3Delegate, cuyos métodos ya están implementados 
         + steps = <pasos>
         + week = < semana >;
         + year = < año >;
+
         Obs. para esta llamada, los datos de fecha day, month e year deben ser considerados.
 
 * SportDataDetailNotification: detalle de un deporte, puede ser andar (código 0x01) u otro que haya sido activado en el dispositivo. Esta notificación devuelve en el parámetro userInfo un diccionario con la siguiente información:
@@ -170,6 +173,7 @@ A través del protocolo BLELib3Delegate, cuyos métodos ya están implementados 
 * SportDataDetailNotification
 * SleepDataNotification
 * HeartRateDataHoursNotification
+
 deben ser almacenados en el momento en que se recibe la notificación, si se desea tener acceso a los mismo posteriormente, porque el dispositivo no los vuelve a enviar.
 
 ### Llamadas de obtención de datos del dispositivo:
@@ -206,8 +210,8 @@ Las siguientes llamadas de métodos públicos de [TrainingManager sharedInstance
 
 * `(void)deviceReset`: reinicia el dispositivo 
 
-   
-## CLASE BLELib3
+___
+## Clase BLELib3
 
 ### Llamadas de configuración de funcionalidades
 
@@ -280,6 +284,7 @@ Se configuran calendarios a través de los métodos:
         + scheduleModel.minute = <int>
         + scheduleModel.title = <string max 20>
         + scheduleModel.subTitle = <string max 33>
+
 Se pueden crear hasta 4 schedule al día y no pueden haber dos en la misma fecha/hora.
 * `(void)closeSchedule:(IwownSchedule *)sModel`: borra el calendario correpondiente al parámetro sModel.
 * `clearAllSchedule`: remove todos los calendarios configurados en el dispositivo
