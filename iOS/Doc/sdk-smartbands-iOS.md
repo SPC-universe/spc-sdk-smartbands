@@ -2,9 +2,8 @@
 
 Este SDK contempla métodos para conexión, configuración y obtención de datos de los dispositivos Fit Pro 9614N, Fit Pulse 9615N y Smartee Training 9616N para la plataforma iOS.
 
-___
 ## Clase TrainingManager
-**TrainingManager** es la clase que centra las llamadas de búsqueda de dispositivos (scanDevice, stopScan, getDevices), conexión (connectDevice), estado de la conexión (currentState, isConnected, isBinded), desconexión (unConnectDevice, debind), llamadas para obtención de datos (getDeviceInfo, getSupportSportsList, getCurrentSportData, getHRDataOfHours, sportDataSwitchOn), devolución de los datos a través de notificaciones, llamada de configuración de los deportes activos en los dispositivos Iwown (setSportTarget) y llamada de reinicio del dispositivo (deviceReset). 
+**TrainingManager** es la clase que centra las llamadas de búsqueda de dispositivos (scanDevice, stopScan, getDevices), conexión (connectDevice), estado de la conexión (currentState, isConnected, isBinded), desconexión (unConnectDevice, debind), llamadas para obtención de datos (getDeviceInfo, getSupportSportsList, getCurrentSportData, getHRDataOfHours, sportDataSwitchOn), devolución de los datos a través de notificaciones, llamada de configuración de los deportes activos en los dispositivos (setSportTarget) y llamada de reinicio del dispositivo (deviceReset). 
 
 **TrainingManager** implementa los protcolos definidos en la clase BLELib3 que es la clase que implementa la comunicación directa con los dispositivos Iwown:
 
@@ -47,7 +46,7 @@ ___
 
 ### Proceso de búsqueda y conexión:
 
-* apuntarse a las notificaciones 'DeviceFoundNotification': se envían a cada dispositivo Iwown encontrado
+* apuntarse a las notificaciones 'DeviceFoundNotification': se envían a cada dispositivo encontrado
 * llamar a [TrainingManager sharedInstance] `scanDevice`: inicia el proceso de escaneo,
 * esperar a las notificaciones 'DeviceFoundNotification', la notificación trae en el parámetro 'userInfo' un diccionario:
     - @"deviceId": iwDevice.uuidString
@@ -102,7 +101,7 @@ Obs. los datos de fecha day, week, month e year en esta llamada no deben ser con
         + week = \< semana >;
         + year = \< año >;
 
-        Obs. para esta llamada, los datos de fecha day, month e year deben ser considerados.
+Obs. para esta llamada, los datos de fecha day, month e year deben ser considerados.
 
 * SportDataDetailNotification: detalle de un deporte, puede ser andar (código 0x01) u otro que haya sido activado en el dispositivo. Esta notificación devuelve en el parámetro userInfo un diccionario con la siguiente información:
     - start_time:\< yyyy-mm-dd hh:mm:00 - fecha inicio de la actividad >
@@ -122,7 +121,8 @@ Obs. los datos de fecha day, week, month e year en esta llamada no deben ser con
         + start_time = \< número total de minutos del día correspondiente al momento inicio de la actividad >
         + week = \< semana >;
         + year = \< año >;
-        Obs. para esta llamada, los datos de fecha day, month e year deben ser considerados.
+        
+Obs. para esta llamada, los datos de fecha day, month e year deben ser considerados.
 
 * SleepDataNotification: detalle de un período de sueño. Esta notificación devuelve en el parámetro userInfo un diccionario con la siguiente información:
     - start_time:\< yyyy-mm-dd hh:mm:00 - fecha inicio del periodo de sueño >
@@ -137,7 +137,8 @@ Obs. los datos de fecha day, week, month e year en esta llamada no deben ser con
         + start_time = \< número total de minutos del día correspondiente al momento inicio de la actividad >
         + week = \< semana >;
         + year = \< año >;
-        Obs. para esta llamada, los datos de fecha day, month e year deben ser considerados. El sueño puede venir partido en muchos periodos.
+        
+Obs. para esta llamada, los datos de fecha day, month e year deben ser considerados. El sueño puede venir partido en muchos periodos.
 
 * HeartRateDataHoursNotification: detalle del cardio en periodos de una hora. Esta notificación devuelve en el parámetro userInfo un diccionario con la siguiente información:
     - date:\< yyyy-mm-dd hh:00 - fecha/hora del periodo de cardio >
@@ -148,18 +149,21 @@ Obs. los datos de fecha day, week, month e year en esta llamada no deben ser con
         + hour = \< hora al que corresponde los datos de cardio >
         + month = \< mes >
         + year = \< año >
-        Obs. Los dispositivos solo devuelven datos de cardio de las horas completas. Son 60 registros correspondientes a los 60 minutos de la hora empezando por el minuto 0 hasta el 59. El valor '255' deben ser descartado, en el minuto correspondiente no hubo dato válido de cardio.
-        **Importante**: para recibir los datos de cardio hay que activar la sincronización automática, para activarla, una vez que se conecte al dispositivo hay que llamar a [DataManager sharedInstance] `getHRDataOfHours`, a partir de ese momento se recibiran notificaciones de cardio a cada hora completa.
+
+Obs. Los dispositivos solo devuelven datos de cardio de las horas completas. Son 60 registros correspondientes a los 60 minutos de la hora empezando por el minuto 0 hasta el 59. El valor '255' deben ser descartado, en el minuto correspondiente no hubo dato válido de cardio.
+
+**Importante**: para recibir los datos de cardio hay que activar la sincronización automática, para activarla, una vez que se conecte al dispositivo hay que llamar a [DataManager sharedInstance] `getHRDataOfHours`, a partir de ese momento se recibiran notificaciones de cardio a cada hora completa.
 
 * SupportSportsListNotification: listado de deportes que soporta el dispositivo. Esta notificación se genera en respuesta al comando [DataManager sharedInstance] `getSupportSportsList`, y devuelve en el parámetro userInfo un diccionario con la siguiente información:
     - SPORT_NAME: \< array con los nombres de los deportes que soporta el dispositivo >
     - SPORT_NUMBER: \< array con los códigos numéricos de los [deporte](#deportes) >
-    Obs. SPORT_NAME y SPORT_NUMBER vienen ordenados de forma que la posición 0 en ambos corresponden al código del deporte y su respectivo nombre.
     - raw_data: \<diccionario: datos del sdk original >
         + LENGTH: \< número máximo de deportes que se poden activar en el dispositivo >
         + LIST: \< array con los códigos numéricos de los [deporte](#deportes) >
         + NAME: \< array con los nombres de los deportes soportados por el dispositivo, están en chino >
         + UNIT: \< array correspondiente a las unidades de medida de cada deporte >
+
+Obs. SPORT_NAME y SPORT_NUMBER vienen ordenados de forma que la posición 0 en ambos corresponden al código del deporte y su respectivo nombre.
 
 * TakePictureNotify: se recibe al pínhcar el botón de sacar fotos del dispositivo. Esta notificación devuelve en el parámetro userInfo un diccionario con la siguiente información:
     - type: TakePictureNotify
@@ -169,6 +173,7 @@ Obs. los datos de fecha day, week, month e year en esta llamada no deben ser con
 
 
 **IMPORTANTE**: los datos recibidos a través de las notificaciones:
+
 * WholeDaySportDataNotification
 * SportDataDetailNotification
 * SleepDataNotification
@@ -203,14 +208,15 @@ Las siguientes llamadas de métodos públicos de [TrainingManager sharedInstance
 * `(void)setSportTarget:(NSMutableArray *)targetArray`: activa los deportes en el dispositivo. Recibe como parámetro un array de diccionarios, cada diccionario corresponde a un deporte que se quiere activar, este diccionario tiene el siguiente formato: 
     - sportType: \<codigo del deporte que se quiere activar >
     - target: \< el objetivo, cantidad de calorias >
-    Se puede activar como máximo 5 deportes, sendo uno de ellos obligatoriamente el de 'caminar' (código 0x01 - WALKING).
-    Obs. se activan los mismos deportes para los 7 días de la semana.
+
+Se puede activar como máximo 5 deportes, sendo uno de ellos obligatoriamente el de 'caminar' (código 0x01 - WALKING).
+
+Obs. se activan los mismos deportes para los 7 días de la semana.
 
 ### Llamada de reinicio del dispositivo
 
 * `(void)deviceReset`: reinicia el dispositivo 
 
-___
 ## Clase BLELib3
 
 ### Llamadas de configuración de funcionalidades
@@ -267,6 +273,7 @@ Se configuran alarmas través del metodo:
             * b2: viernes
             * b1: sábado
             * b0: domingo
+
 Observaciones:
 * activar: es obligatorio que las propiedades SwitchStatus y Viable estén a true y que se active al menos un flag de día de semana en la propiedad WeekRepeat, el flag b7 de repetición puede estar a 0
 * desactivar: poner WeekRepeat a 0, o SwitchStatus o Viable a false.
