@@ -3,7 +3,7 @@
 Este SDK contempla métodos para conexión, configuración y obtención de datos de los dispositivos Fit Pro 9614N, Fit Pulse 9615N y Smartee Training 9616N para la plataforma iOS.
 
 ## Clase TrainingManager
-**TrainingManager** es la clase que centra las llamadas de búsqueda de dispositivos (scanDevice, stopScan, getDevices), conexión (connectDevice), estado de la conexión (currentState, isConnected, isBinded), desconexión (unConnectDevice, debind), llamadas para obtención de datos (getDeviceInfo, getSupportSportsList, getCurrentSportData, getHRDataOfHours, sportDataSwitchOn), devolución de los datos a través de notificaciones, llamada de configuración de los deportes activos en los dispositivos (setSportTarget) y llamada de reinicio del dispositivo (deviceReset). 
+**TrainingManager** es la clase que centra las llamadas de búsqueda de dispositivos (scanDevice, stopScan, getDevices), conexión (connectDevice), estado de la conexión (currentState, isConnected, isBinded), desconexión (unConnectDevice, debind), llamadas para obtención de datos (getDeviceInfo, getSupportSportsList, getCurrentSportData, getHRDataOfHours, sportDataSwitchOn), devolución de los datos a través de notificaciones (), llamada de configuración de los deportes activos en los dispositivos (setSportTarget) y llamada de reinicio del dispositivo (deviceReset). 
 
 **TrainingManager** implementa los protcolos definidos en la clase BLELib3 que es la clase que implementa la comunicación directa con los dispositivos:
 
@@ -21,7 +21,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
     * `- (void)updateDeviceInfo:(DeviceInfo*)deviceInfo;`
     * `- (void)updateBattery:(DeviceInfo *)deviceInfo;`
 
-    Los métodos abajo de actualización (update) son llamados por el SDK cuando hay nuevos datos enviados por el dispositivo, la aplicación debe estar preparada para recibir estos datos y guardarlos, si procede. El dispositivo ya no vuelve a enviar estos datos, solamente datos nuevos.
+    Los métodos abajo de actualización (update) son llamados por el SDK cuando hay nuevos datos enviados por el dispositivo, la aplicación debe estar preparada para recibirlos y guardarlos, si procede. El dispositivo no vuelve a enviar estos datos posteriormente, solamente datos nuevos.
     
     * `- (void)updateSleepData:(NSDictionary *)dict;`
     * `- (void)updateSportData:(NSDictionary *)dict;`
@@ -32,9 +32,9 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
     * `- (void)notifyToSearchPhone;`
     * `- (void)notifyToTakePicture; `
 
-    * `- (void)responseOfScheduleSetting:(BOOL)success;`
-    * `- (void)responseOfScheduleGetting:(BOOL)exist;`
-    * `- (void)responseOfScheduleInfoGetting:(NSDictionary *)dict;`
+    * `- (void)responseOfScheduleSetting:(BOOL)success;`  
+    * `- (void)responseOfScheduleGetting:(BOOL)exist;` 
+    * `- (void)responseOfScheduleInfoGetting:(NSDictionary *)dict;` 
 
     Los métodos abajo están definidos en el protocolo BLELib3 pero no tinen el correspondiente get.
 
@@ -63,7 +63,7 @@ Cuando el dispositivo se conecta, el sdk automaticamente hace una sincronizació
 
 A través del protocolo BLELib3Delegate, cuyos métodos ya están implementados en la clase **TrainingManager**, se reciben los datos enviados por el dispositivo, bien sea respondendo a la sincronización automática o debido a una solicitud de la  aplicación.
 
-**TrainingManager** envía notificaciones al recibir datos del dispositivo:
+**TrainingManager** envía las siguientes notificaciones al recibir datos del dispositivo:
 
 * CurrentWholeDaySportDataNotification: totales del día de hoy. Esta notificación devuelve en el parámetro userInfo un diccionario con la siguiente información:
     - steps: \< pasos >
@@ -81,7 +81,7 @@ A través del protocolo BLELib3Delegate, cuyos métodos ya están implementados 
         + week = \< semana >;
         + year = \< año >;
 
-Obs. los datos de fecha day, week, month e year en esta llamada no deben ser considerados, la fecha para **current** corresponde a hoy.
+Obs. los datos de fecha day, week, month e year en esta notificación no deben ser considerados, la fecha para **current** corresponde a hoy.
 
 * WholeDaySportDataNotification: totales de un día anterior a hoy. Esta notificación devuelve en el parámetro userInfo un diccionario con la siguiente información:
     - date:\<yyyymmdd>
@@ -101,7 +101,7 @@ Obs. los datos de fecha day, week, month e year en esta llamada no deben ser con
         + week = \< semana >;
         + year = \< año >;
 
-Obs. para esta llamada, los datos de fecha day, month e year deben ser considerados.
+Obs. para esta notificación, los datos de fecha day, month e year deben ser considerados.
 
 * SportDataDetailNotification: detalle de un deporte, puede ser andar (código 0x01) u otro que haya sido activado en el dispositivo. Esta notificación devuelve en el parámetro userInfo un diccionario con la siguiente información:
     - start_time:\< yyyy-mm-dd hh:mm:00 - fecha inicio de la actividad >
@@ -122,7 +122,7 @@ Obs. para esta llamada, los datos de fecha day, month e year deben ser considera
         + week = \< semana >;
         + year = \< año >;
         
-Obs. para esta llamada, los datos de fecha day, month e year deben ser considerados.
+Obs. para esta notificación, los datos de fecha day, month e year deben ser considerados.
 
 * SleepDataNotification: detalle de un período de sueño. Esta notificación devuelve en el parámetro userInfo un diccionario con la siguiente información:
     - start_time:\< yyyy-mm-dd hh:mm:00 - fecha inicio del periodo de sueño >
@@ -138,7 +138,7 @@ Obs. para esta llamada, los datos de fecha day, month e year deben ser considera
         + week = \< semana >;
         + year = \< año >;
         
-Obs. para esta llamada, los datos de fecha day, month e year deben ser considerados. El sueño puede venir partido en muchos periodos.
+Obs. para esta notificación, los datos de fecha day, month e year deben ser considerados. El sueño puede venir partido en muchos periodos.
 
 * HeartRateDataHoursNotification: detalle del cardio en periodos de una hora. Esta notificación devuelve en el parámetro userInfo un diccionario con la siguiente información:
     - date:\< yyyy-mm-dd hh:00 - fecha/hora del periodo de cardio >
@@ -152,9 +152,9 @@ Obs. para esta llamada, los datos de fecha day, month e year deben ser considera
 
 Obs. Los dispositivos solo devuelven datos de cardio de las horas completas. Son 60 registros correspondientes a los 60 minutos de la hora empezando por el minuto 0 hasta el 59. El valor '255' deben ser descartado, en el minuto correspondiente no hubo dato válido de cardio.
 
-**Importante**: para recibir los datos de cardio hay que activar la sincronización automática, para activarla, una vez que se conecte al dispositivo hay que llamar a [DataManager sharedInstance] `getHRDataOfHours`, a partir de ese momento se recibiran notificaciones de cardio a cada hora completa.
+**Importante**: para recibir los datos de cardio hay que activar la sincronización automática de cardio, para activarla, una vez que se conecte al dispositivo hay que llamar a [TrainingManager sharedInstance] `getHRDataOfHours`, a partir de ese momento se recibiran notificaciones de cardio a cada hora completa.
 
-* SupportSportsListNotification: listado de deportes que soporta el dispositivo. Esta notificación se genera en respuesta al comando [DataManager sharedInstance] `getSupportSportsList`, y devuelve en el parámetro userInfo un diccionario con la siguiente información:
+* SupportSportsListNotification: listado de deportes que soporta el dispositivo. Esta notificación se genera en respuesta al comando [TrainingManager sharedInstance] `getSupportSportsList`, y devuelve en el parámetro userInfo un diccionario con la siguiente información:
     - SPORT_NAME: \< array con los nombres de los deportes que soporta el dispositivo >
     - SPORT_NUMBER: \< array con los códigos numéricos de los [deporte](#deportes) >
     - raw_data: \<diccionario: datos del sdk original >
@@ -187,6 +187,7 @@ Las siguientes llamadas de métodos públicos de [TrainingManager sharedInstance
 
 * `(void)getDeviceInfo`: información del dispositivo conectado. Devuelve la respuesta a través de la notificación:
     - updateDeviceInfo: notificación con la información del dispositivo, esta notificación devuelve en el parametro 'object' un objeto de la clase DeviceInfo (ver más detalles en el archivo DeviceInfo.h)
+    - updateBattery: notificación con la información del nivel de bateria del dispositivo, esta notificación también devuelve en el parametro 'object' un objeto de la clase DeviceInfo.
 
 * `(void)getSupportSportsList`: Obtención de los deportes soportados por el dispositivo. No siempre corresponde lo que devuelve el dispositivo con lo que se le puede activar. Devuelve la respuesta a través de la notificación:
     - SupportSportsListNotification: ver explicación arriba.
