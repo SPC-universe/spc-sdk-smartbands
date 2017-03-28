@@ -1,0 +1,533 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D73571D81E810E9300E16237 /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D73571D71E810E9300E16237 /* AlarmViewController.m */; };
+		D79E49B11E7BE07000F7DAD7 /* libIwownBLE3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CBEE841E7AAC2B0041ECE3 /* libIwownBLE3.a */; };
+		D79E49B31E7BE0BB00F7DAD7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79E49B21E7BE0BB00F7DAD7 /* CoreBluetooth.framework */; };
+		D79E49B61E7F993200F7DAD7 /* CommandsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79E49B51E7F993200F7DAD7 /* CommandsViewController.m */; };
+		D79E49B91E7FD1DA00F7DAD7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79E49B81E7FD1DA00F7DAD7 /* SettingsViewController.m */; };
+		D7AC12B61E7AB030008CAF13 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7AC12B51E7AB030008CAF13 /* DataManager.m */; };
+		D7AC12BF1E7AD521008CAF13 /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7AC12BE1E7AD521008CAF13 /* DeviceViewController.m */; };
+		D7AC12C51E7AD9C0008CAF13 /* DevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7AC12C41E7AD9C0008CAF13 /* DevicesViewController.m */; };
+		D7AC12C81E7AE8ED008CAF13 /* PersonalInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7AC12C71E7AE8ED008CAF13 /* PersonalInformationViewController.m */; };
+		D7CBEE6C1E7AAA1E0041ECE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CBEE6B1E7AAA1E0041ECE3 /* main.m */; };
+		D7CBEE6F1E7AAA1E0041ECE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CBEE6E1E7AAA1E0041ECE3 /* AppDelegate.m */; };
+		D7CBEE751E7AAA1E0041ECE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7CBEE731E7AAA1E0041ECE3 /* Main.storyboard */; };
+		D7CBEE771E7AAA1E0041ECE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7CBEE761E7AAA1E0041ECE3 /* Assets.xcassets */; };
+		D7CBEE7A1E7AAA1E0041ECE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7CBEE781E7AAA1E0041ECE3 /* LaunchScreen.storyboard */; };
+		D7D5039D1E814C2C0032F38A /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D5039C1E814C2C0032F38A /* ScheduleViewController.m */; };
+		D7D503A01E825D900032F38A /* SportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D5039F1E825D900032F38A /* SportsViewController.m */; };
+		D7D503A31E82765C0032F38A /* SedentaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D503A21E82765C0032F38A /* SedentaryViewController.m */; };
+		D7D503A61E8287C80032F38A /* HardwareOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D503A51E8287C80032F38A /* HardwareOptionsViewController.m */; };
+		D7D503B51E82B23A0032F38A /* CameraPhoneSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D503B41E82B23A0032F38A /* CameraPhoneSearchViewController.m */; };
+		D7D503CC1E88C55B0032F38A /* SportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D503C91E88C55B0032F38A /* SportManager.m */; };
+		D7D503CD1E88C55B0032F38A /* TrainingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D503CB1E88C55B0032F38A /* TrainingManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C68F2E01FF1CAB99DFD061A4 /* Pods-sdk-iwon-iOS-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-iwon-iOS-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-sdk-iwon-iOS-example/Pods-sdk-iwon-iOS-example.release.xcconfig"; sourceTree = "<group>"; };
+		D73571D61E810E9300E16237 /* AlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmViewController.h; path = Controller/AlarmViewController.h; sourceTree = "<group>"; };
+		D73571D71E810E9300E16237 /* AlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlarmViewController.m; path = Controller/AlarmViewController.m; sourceTree = "<group>"; };
+		D79E49B21E7BE0BB00F7DAD7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		D79E49B41E7F993200F7DAD7 /* CommandsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandsViewController.h; path = Controller/CommandsViewController.h; sourceTree = "<group>"; };
+		D79E49B51E7F993200F7DAD7 /* CommandsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommandsViewController.m; path = Controller/CommandsViewController.m; sourceTree = "<group>"; };
+		D79E49B71E7FD1DA00F7DAD7 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Controller/SettingsViewController.h; sourceTree = "<group>"; };
+		D79E49B81E7FD1DA00F7DAD7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controller/SettingsViewController.m; sourceTree = "<group>"; };
+		D7AC12A11E7AAF88008CAF13 /* BLELib3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLELib3.h; sourceTree = "<group>"; };
+		D7AC12A41E7AAF88008CAF13 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
+		D7AC12A51E7AAF88008CAF13 /* IwownBleHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IwownBleHeader.h; sourceTree = "<group>"; };
+		D7AC12A61E7AAF88008CAF13 /* IwownBlePeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IwownBlePeripheral.h; sourceTree = "<group>"; };
+		D7AC12A71E7AAF88008CAF13 /* IwownModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IwownModel.h; sourceTree = "<group>"; };
+		D7AC12AB1E7AAF88008CAF13 /* ScaleBLEShareInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleBLEShareInstance.h; sourceTree = "<group>"; };
+		D7AC12B41E7AB030008CAF13 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Model/DataManager.h; sourceTree = "<group>"; };
+		D7AC12B51E7AB030008CAF13 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Model/DataManager.m; sourceTree = "<group>"; };
+		D7AC12BD1E7AD521008CAF13 /* DeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceViewController.h; path = Controller/DeviceViewController.h; sourceTree = "<group>"; };
+		D7AC12BE1E7AD521008CAF13 /* DeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceViewController.m; path = Controller/DeviceViewController.m; sourceTree = "<group>"; };
+		D7AC12C31E7AD9C0008CAF13 /* DevicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DevicesViewController.h; path = Controller/DevicesViewController.h; sourceTree = "<group>"; };
+		D7AC12C41E7AD9C0008CAF13 /* DevicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DevicesViewController.m; path = Controller/DevicesViewController.m; sourceTree = "<group>"; };
+		D7AC12C61E7AE8ED008CAF13 /* PersonalInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonalInformationViewController.h; path = Controller/PersonalInformationViewController.h; sourceTree = "<group>"; };
+		D7AC12C71E7AE8ED008CAF13 /* PersonalInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonalInformationViewController.m; path = Controller/PersonalInformationViewController.m; sourceTree = "<group>"; };
+		D7CBEE671E7AAA1E0041ECE3 /* sdk-smartbands-iOS-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sdk-smartbands-iOS-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7CBEE6B1E7AAA1E0041ECE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D7CBEE6D1E7AAA1E0041ECE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D7CBEE6E1E7AAA1E0041ECE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D7CBEE741E7AAA1E0041ECE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D7CBEE761E7AAA1E0041ECE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7CBEE791E7AAA1E0041ECE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D7CBEE7B1E7AAA1E0041ECE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7CBEE841E7AAC2B0041ECE3 /* libIwownBLE3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIwownBLE3.a; path = "sdk-smartbands-iOS-example/libIwownBLE3/libIwownBLE3.a"; sourceTree = "<group>"; };
+		D7D5039B1E814C2C0032F38A /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleViewController.h; path = Controller/ScheduleViewController.h; sourceTree = "<group>"; };
+		D7D5039C1E814C2C0032F38A /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleViewController.m; path = Controller/ScheduleViewController.m; sourceTree = "<group>"; };
+		D7D5039E1E825D900032F38A /* SportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SportsViewController.h; path = Controller/SportsViewController.h; sourceTree = "<group>"; };
+		D7D5039F1E825D900032F38A /* SportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SportsViewController.m; path = Controller/SportsViewController.m; sourceTree = "<group>"; };
+		D7D503A11E82765C0032F38A /* SedentaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SedentaryViewController.h; path = Controller/SedentaryViewController.h; sourceTree = "<group>"; };
+		D7D503A21E82765C0032F38A /* SedentaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SedentaryViewController.m; path = Controller/SedentaryViewController.m; sourceTree = "<group>"; };
+		D7D503A41E8287C80032F38A /* HardwareOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HardwareOptionsViewController.h; path = Controller/HardwareOptionsViewController.h; sourceTree = "<group>"; };
+		D7D503A51E8287C80032F38A /* HardwareOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HardwareOptionsViewController.m; path = Controller/HardwareOptionsViewController.m; sourceTree = "<group>"; };
+		D7D503B31E82B23A0032F38A /* CameraPhoneSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraPhoneSearchViewController.h; path = Controller/CameraPhoneSearchViewController.h; sourceTree = "<group>"; };
+		D7D503B41E82B23A0032F38A /* CameraPhoneSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraPhoneSearchViewController.m; path = Controller/CameraPhoneSearchViewController.m; sourceTree = "<group>"; };
+		D7D503C81E88C55B0032F38A /* SportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportManager.h; sourceTree = "<group>"; };
+		D7D503C91E88C55B0032F38A /* SportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportManager.m; sourceTree = "<group>"; };
+		D7D503CA1E88C55B0032F38A /* TrainingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingManager.h; sourceTree = "<group>"; };
+		D7D503CB1E88C55B0032F38A /* TrainingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingManager.m; sourceTree = "<group>"; };
+		E5B8C09A4BFE985F97A1C45A /* Pods-sdk-iwon-iOS-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-iwon-iOS-example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sdk-iwon-iOS-example/Pods-sdk-iwon-iOS-example.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7CBEE641E7AAA1E0041ECE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79E49B31E7BE0BB00F7DAD7 /* CoreBluetooth.framework in Frameworks */,
+				D79E49B11E7BE07000F7DAD7 /* libIwownBLE3.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CDEFE46F24D06C1E30FC5EDB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8C09A4BFE985F97A1C45A /* Pods-sdk-iwon-iOS-example.debug.xcconfig */,
+				C68F2E01FF1CAB99DFD061A4 /* Pods-sdk-iwon-iOS-example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D7AC12A01E7AAF88008CAF13 /* libIwownBLE3 */ = {
+			isa = PBXGroup;
+			children = (
+				D7D503CA1E88C55B0032F38A /* TrainingManager.h */,
+				D7D503CB1E88C55B0032F38A /* TrainingManager.m */,
+				D7D503C81E88C55B0032F38A /* SportManager.h */,
+				D7D503C91E88C55B0032F38A /* SportManager.m */,
+				D7AC12A11E7AAF88008CAF13 /* BLELib3.h */,
+				D7AC12A41E7AAF88008CAF13 /* DeviceInfo.h */,
+				D7AC12A51E7AAF88008CAF13 /* IwownBleHeader.h */,
+				D7AC12A61E7AAF88008CAF13 /* IwownBlePeripheral.h */,
+				D7AC12A71E7AAF88008CAF13 /* IwownModel.h */,
+				D7AC12AB1E7AAF88008CAF13 /* ScaleBLEShareInstance.h */,
+			);
+			path = libIwownBLE3;
+			sourceTree = "<group>";
+		};
+		D7AC12B31E7AB00D008CAF13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D7AC12B41E7AB030008CAF13 /* DataManager.h */,
+				D7AC12B51E7AB030008CAF13 /* DataManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D7CBEE5E1E7AAA1E0041ECE3 = {
+			isa = PBXGroup;
+			children = (
+				D7CBEE691E7AAA1E0041ECE3 /* sdk-smartbands-iOS-example */,
+				D7CBEE681E7AAA1E0041ECE3 /* Products */,
+				D7CBEE831E7AAC2A0041ECE3 /* Frameworks */,
+				CDEFE46F24D06C1E30FC5EDB /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		D7CBEE681E7AAA1E0041ECE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7CBEE671E7AAA1E0041ECE3 /* sdk-smartbands-iOS-example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7CBEE691E7AAA1E0041ECE3 /* sdk-smartbands-iOS-example */ = {
+			isa = PBXGroup;
+			children = (
+				D7AC12B31E7AB00D008CAF13 /* Model */,
+				D7AC12A01E7AAF88008CAF13 /* libIwownBLE3 */,
+				D7CBEE811E7AAB980041ECE3 /* Controller */,
+				D7CBEE731E7AAA1E0041ECE3 /* Main.storyboard */,
+				D7CBEE761E7AAA1E0041ECE3 /* Assets.xcassets */,
+				D7CBEE781E7AAA1E0041ECE3 /* LaunchScreen.storyboard */,
+				D7CBEE6A1E7AAA1E0041ECE3 /* Supporting Files */,
+			);
+			path = "sdk-smartbands-iOS-example";
+			sourceTree = "<group>";
+		};
+		D7CBEE6A1E7AAA1E0041ECE3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7CBEE7B1E7AAA1E0041ECE3 /* Info.plist */,
+				D7CBEE6D1E7AAA1E0041ECE3 /* AppDelegate.h */,
+				D7CBEE6E1E7AAA1E0041ECE3 /* AppDelegate.m */,
+				D7CBEE6B1E7AAA1E0041ECE3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7CBEE811E7AAB980041ECE3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D7AC12BD1E7AD521008CAF13 /* DeviceViewController.h */,
+				D7AC12BE1E7AD521008CAF13 /* DeviceViewController.m */,
+				D7AC12C31E7AD9C0008CAF13 /* DevicesViewController.h */,
+				D7AC12C41E7AD9C0008CAF13 /* DevicesViewController.m */,
+				D7AC12C61E7AE8ED008CAF13 /* PersonalInformationViewController.h */,
+				D7AC12C71E7AE8ED008CAF13 /* PersonalInformationViewController.m */,
+				D79E49B41E7F993200F7DAD7 /* CommandsViewController.h */,
+				D79E49B51E7F993200F7DAD7 /* CommandsViewController.m */,
+				D79E49B71E7FD1DA00F7DAD7 /* SettingsViewController.h */,
+				D79E49B81E7FD1DA00F7DAD7 /* SettingsViewController.m */,
+				D73571D61E810E9300E16237 /* AlarmViewController.h */,
+				D73571D71E810E9300E16237 /* AlarmViewController.m */,
+				D7D5039B1E814C2C0032F38A /* ScheduleViewController.h */,
+				D7D5039C1E814C2C0032F38A /* ScheduleViewController.m */,
+				D7D5039E1E825D900032F38A /* SportsViewController.h */,
+				D7D5039F1E825D900032F38A /* SportsViewController.m */,
+				D7D503A11E82765C0032F38A /* SedentaryViewController.h */,
+				D7D503A21E82765C0032F38A /* SedentaryViewController.m */,
+				D7D503A41E8287C80032F38A /* HardwareOptionsViewController.h */,
+				D7D503A51E8287C80032F38A /* HardwareOptionsViewController.m */,
+				D7D503B31E82B23A0032F38A /* CameraPhoneSearchViewController.h */,
+				D7D503B41E82B23A0032F38A /* CameraPhoneSearchViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D7CBEE831E7AAC2A0041ECE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D79E49B21E7BE0BB00F7DAD7 /* CoreBluetooth.framework */,
+				D7CBEE841E7AAC2B0041ECE3 /* libIwownBLE3.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D7CBEE661E7AAA1E0041ECE3 /* sdk-smartbands-iOS-example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7CBEE7E1E7AAA1E0041ECE3 /* Build configuration list for PBXNativeTarget "sdk-smartbands-iOS-example" */;
+			buildPhases = (
+				6C1490E8D588EF7D8EB343A7 /* [CP] Check Pods Manifest.lock */,
+				D7CBEE631E7AAA1E0041ECE3 /* Sources */,
+				D7CBEE641E7AAA1E0041ECE3 /* Frameworks */,
+				D7CBEE651E7AAA1E0041ECE3 /* Resources */,
+				C7A977B77F5BC88C51799421 /* [CP] Embed Pods Frameworks */,
+				99E47FE33848E98392A73C74 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "sdk-smartbands-iOS-example";
+			productName = "sdk-smartbands-iOS-example";
+			productReference = D7CBEE671E7AAA1E0041ECE3 /* sdk-smartbands-iOS-example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7CBEE5F1E7AAA1E0041ECE3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = SPC;
+				TargetAttributes = {
+					D7CBEE661E7AAA1E0041ECE3 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = BT74GMUQ9Z;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D7CBEE621E7AAA1E0041ECE3 /* Build configuration list for PBXProject "sdk-smartbands-iOS-example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D7CBEE5E1E7AAA1E0041ECE3;
+			productRefGroup = D7CBEE681E7AAA1E0041ECE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7CBEE661E7AAA1E0041ECE3 /* sdk-smartbands-iOS-example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7CBEE651E7AAA1E0041ECE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7CBEE7A1E7AAA1E0041ECE3 /* LaunchScreen.storyboard in Resources */,
+				D7CBEE771E7AAA1E0041ECE3 /* Assets.xcassets in Resources */,
+				D7CBEE751E7AAA1E0041ECE3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C1490E8D588EF7D8EB343A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		99E47FE33848E98392A73C74 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sdk-iwon-iOS-example/Pods-sdk-iwon-iOS-example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7A977B77F5BC88C51799421 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sdk-iwon-iOS-example/Pods-sdk-iwon-iOS-example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7CBEE631E7AAA1E0041ECE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D73571D81E810E9300E16237 /* AlarmViewController.m in Sources */,
+				D7AC12C81E7AE8ED008CAF13 /* PersonalInformationViewController.m in Sources */,
+				D7D503A61E8287C80032F38A /* HardwareOptionsViewController.m in Sources */,
+				D7D503A01E825D900032F38A /* SportsViewController.m in Sources */,
+				D7D503CC1E88C55B0032F38A /* SportManager.m in Sources */,
+				D7D503CD1E88C55B0032F38A /* TrainingManager.m in Sources */,
+				D7AC12B61E7AB030008CAF13 /* DataManager.m in Sources */,
+				D7CBEE6F1E7AAA1E0041ECE3 /* AppDelegate.m in Sources */,
+				D7AC12C51E7AD9C0008CAF13 /* DevicesViewController.m in Sources */,
+				D7D5039D1E814C2C0032F38A /* ScheduleViewController.m in Sources */,
+				D7CBEE6C1E7AAA1E0041ECE3 /* main.m in Sources */,
+				D79E49B61E7F993200F7DAD7 /* CommandsViewController.m in Sources */,
+				D79E49B91E7FD1DA00F7DAD7 /* SettingsViewController.m in Sources */,
+				D7AC12BF1E7AD521008CAF13 /* DeviceViewController.m in Sources */,
+				D7D503B51E82B23A0032F38A /* CameraPhoneSearchViewController.m in Sources */,
+				D7D503A31E82765C0032F38A /* SedentaryViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D7CBEE731E7AAA1E0041ECE3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7CBEE741E7AAA1E0041ECE3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D7CBEE781E7AAA1E0041ECE3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7CBEE791E7AAA1E0041ECE3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D7CBEE7C1E7AAA1E0041ECE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				EXPORTED_SYMBOLS_FILE = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7CBEE7D1E7AAA1E0041ECE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXPORTED_SYMBOLS_FILE = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D7CBEE7F1E7AAA1E0041ECE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5B8C09A4BFE985F97A1C45A /* Pods-sdk-iwon-iOS-example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BT74GMUQ9Z;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "sdk-smartbands-iOS-example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/sdk-smartbands-iOS-example/libIwownBLE3",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.spc-universe.sdk-smartbands-iOS-example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D7CBEE801E7AAA1E0041ECE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C68F2E01FF1CAB99DFD061A4 /* Pods-sdk-iwon-iOS-example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BT74GMUQ9Z;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "sdk-smartbands-iOS-example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/sdk-smartbands-iOS-example/libIwownBLE3",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.spc-universe.sdk-smartbands-iOS-example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7CBEE621E7AAA1E0041ECE3 /* Build configuration list for PBXProject "sdk-smartbands-iOS-example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7CBEE7C1E7AAA1E0041ECE3 /* Debug */,
+				D7CBEE7D1E7AAA1E0041ECE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7CBEE7E1E7AAA1E0041ECE3 /* Build configuration list for PBXNativeTarget "sdk-smartbands-iOS-example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7CBEE7F1E7AAA1E0041ECE3 /* Debug */,
+				D7CBEE801E7AAA1E0041ECE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7CBEE5F1E7AAA1E0041ECE3 /* Project object */;
+}
