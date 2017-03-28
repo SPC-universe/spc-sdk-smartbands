@@ -1,13 +1,13 @@
-#Documentación sdk-smartbands-ios
+# Documentación sdk-smartbands-ios
 
 Este SDK contempla métodos para conexión, configuración y obtención de datos de los dispositivos Fit Pro 9614N, Fit Pulse 9615N y Smartee Training 9616N para la plataforma iOS.
 
-##CLASE TrainingManager
+## CLASE TrainingManager
 **TrainingManager** es la clase que centra las llamadas de búsqueda de dispositivos (scanDevice, stopScan, getDevices), conexión (connectDevice), estado de la conexión (currentState, isConnected, isBinded), desconexión (unConnectDevice, debind), llamadas para obtención de datos (getDeviceInfo, getSupportSportsList, getCurrentSportData, getHRDataOfHours, sportDataSwitchOn), devolución de los datos a través de notificaciones, llamada de configuración de los deportes activos en los dispositivos Iwown (setSportTarget) y llamada de reinicio del dispositivo (deviceReset). 
 
 **TrainingManager** implementa los protcolos definidos en la clase BLELib3 que es la clase que implementa la comunicación directa con los dispositivos Iwown:
 
-###PROTOCOLOS
+### PROTOCOLOS
 * @protocol IWBLEDiscoverDelegate
     * `- (void)IWBLEDidDiscoverDeviceWithMAC:(IwownBlePeripheral *)iwDevice;`
 
@@ -44,7 +44,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
     * `- (void)responseOfGetHWOption:(IwownHWOption *)hwOption;`
     * `- (void)responseOfGetSprotTarget:(IwownSportTarget *)spModel;`
 
-###Proceso de búsqueda y conexión:
+### Proceso de búsqueda y conexión:
 
 * apuntarse a las notificaciones 'DeviceFoundNotification': se envían a cada dispositivo Iwown encontrado
 * llamar a [TrainingManager sharedInstance] `scanDevice`: inicia el proceso de escaneo,
@@ -59,7 +59,7 @@ Este SDK contempla métodos para conexión, configuración y obtención de datos
 
 Cuando el dispositivo se conecta, el sdk automaticamente hace una sincronización con el dispositivo solicitando información de actividad, sueño y deporte.  
 
-###Proceso de recepción de datos:
+### Proceso de recepción de datos:
 
 A través del protocolo BLELib3Delegate, cuyos métodos ya están implementados en la clase **TrainingManager**, se reciben los datos enviados por el dispositivo, bien sea respondendo a la sincronización automática o debido a una solicitud de la  aplicación.
 
@@ -172,7 +172,7 @@ A través del protocolo BLELib3Delegate, cuyos métodos ya están implementados 
 * HeartRateDataHoursNotification
 deben ser almacenados en el momento en que se recibe la notificación, si se desea tener acceso a los mismo posteriormente, porque el dispositivo no los vuelve a enviar.
 
-###Llamadas de obtención de datos del dispositivo:
+### Llamadas de obtención de datos del dispositivo:
 
 Las siguientes llamadas de métodos públicos de [TrainingManager sharedInstance] sirven para obtener datos del dispositivo:
 
@@ -194,7 +194,7 @@ Las siguientes llamadas de métodos públicos de [TrainingManager sharedInstance
 * `(void)getHRDataOfHours`: activa la sincronización automática de los datos de cardio. Estos datos son devueltos al cambio de cada hora, siempre devolviendo los datos de la hora anterior que acaba de terminar. Devuelve la respuesta a través de la notificación:
     - HeartRateDataHoursNotification
 
-###Llamadas de configuración del dispositivo:
+### Llamadas de configuración del dispositivo:
 
 * `(void)setSportTarget:(NSMutableArray *)targetArray`: activa los deportes en el dispositivo. Recibe como parámetro un array de diccionarios, cada diccionario corresponde a un deporte que se quiere activar, este diccionario tiene el siguiente formato: 
     - sportType: <codigo del deporte que se quiere activar >
@@ -202,18 +202,18 @@ Las siguientes llamadas de métodos públicos de [TrainingManager sharedInstance
     Se puede activar como máximo 5 deportes, sendo uno de ellos obligatoriamente el de 'caminar' (código 0x01 - WALKING).
     Obs. se activan los mismos deportes para los 7 días de la semana.
 
-###Llamada de reinicio del dispositivo
+### Llamada de reinicio del dispositivo
 
 * `(void)deviceReset`: reinicia el dispositivo 
 
    
-##CLASE BLELib3
+## CLASE BLELib3
 
-###Llamadas de configuración de funcionalidades
+### Llamadas de configuración de funcionalidades
 
 Los siguientes métodos están implementados en la clase BLELib3 y deben ser llamados a través de la instancia compartida de esta clase [BLELib3 shareInstance].
 
-####Alarma de sedentario:
+#### Alarma de sedentario:
 
 Se permite configurar un unico alarma de sedentario:
 * `(void)setAlertMotionReminder:(IwownSedentary *)sedentaryModel`: hay que pasarle un parámetro del tipo IwownSedentary (ver archivo IwownModel.h para más detalles), este parámetro tendría los siguientes datos:
@@ -232,7 +232,7 @@ Se permite configurar un unico alarma de sedentario:
             * b0: domingo
         + [sedentaryModel setSwitchStatus:<booleano>]: true para activar y false para desactivar 
 
-####Información personal
+#### Información personal
 
 Se configura la información personal a través del metodo:
 * `(void)setPersonalInfo:(IwownPersonal *)personalModel`: hay que pasarle un parámetro del tipo 'IwownPersonal' (ver archivo IwownModel.h para más detalles), este parámetro tendría los siguientes datos:
@@ -243,7 +243,7 @@ Se configura la información personal a través del metodo:
         + [iwPersonal setTarget: <int>]
         + [iwPersonal setAge:<int>]
 
-####Alarma
+#### Alarma
 
 Se configuran alarmas través del metodo:
 * `(void)setScheduleClock:(IwownClock *)clockModel`: hay que pasarle un parámetro del tipo 'IwownClock' (ver archivo IwownModel.h para más detalles), este parámetro tendría los siguientes datos:
@@ -268,7 +268,7 @@ Observaciones:
 * desactivar: poner WeekRepeat a 0, o SwitchStatus o Viable a false.
 * repeticiones: si el flag de repetición está a 1, la alarma repite semanalmente, si está a off, es una alarma puntual
 
-####Schedule
+#### Schedule
 
 Se configuran calendarios a través de los métodos: 
 * `(void)writeSchedule:(IwownSchedule *)sModel`: crea un nuevo calendario, hay que pasarle un parámetro del tipo 'IwownSchedule' (ver archivo IwownModel.h para más detalles), este parámetro tendría los siguientes datos:
@@ -291,7 +291,7 @@ Los siguientes métodos para leer información de schedule del dispositivo siemp
 * `(void)readScheduleInfo`: retorna siempre YES
 * `(void)readSchedule:(IwownSchedule *)sModel`: retorna 0 si el schedule no existe y 1 si el schedule existe
 
-####Sacar fotos con cámara
+#### Sacar fotos con cámara
 
 Para activar el modo sacar foto, hay que llamar al método:
 * `(void)setKeyNotify:(NSUInteger)keyNotify`: dónde el parámetro keyNotify puede tener los siguientes valores:
@@ -302,13 +302,13 @@ Al activar el modo sacar foto, el dispositivo muestra el botón de sacar fotos. 
 * `(void)notifyToTakePicture`
 Este mismo evento pude ser capturado a través de la notificación 'TakePictureNotify'.
 
-####Buscar móvil
+#### Buscar móvil
 
 Para buscar el móvil, al dar al icono de búsqueda en el dispositivo, se recibe una notificación a través del método:
 * `(void)notifyToSearchPhone`
 Este mismo evento pude ser capturado a través de la notificación 'SearchPhoneNotify'.
 
-###Configuraciones del dispositivo
+### Configuraciones del dispositivo
 
 Es posible configurar algunas opciones del dispositivo a través del método: 
 * `(void)setFirmWareOption:(IwownHWOption *)hwOptionModel`: el parámetro de la clase IwownHWOption dispone de las siguientes propiedades: 
@@ -330,13 +330,13 @@ Es posible configurar algunas opciones del dispositivo a través del método:
     - leSwitch (BOOL)
     - wristSwitch (BOOL)
 
-####Push de string
+#### Push de string
 
 * `(void)pushStr:(NSString *)str`: permite enviar un texto al dispositivo que se visualiza imediatamente.
 
-##APENDICE I
+## APENDICE I
 
-###DEPORTES
+### DEPORTES
 CÓDIGO DE LOS DEPORTES PARA LOS DISPOSITIVOS TRAINING
 * 1   : 0x01 : walk
 * 2   : 0x02 : situp
@@ -363,7 +363,7 @@ CÓDIGO DE LOS DEPORTES PARA LOS DISPOSITIVOS TRAINING
 * 144 : 0x90 : yoga
 * 145 : 0x91 : shuttlecock
 
-###SLEEP TYPE
+### SLEEP TYPE
 CÓDIGO SLEEP TYPE Y SIGNIFICADO
 
 * 1: SleepTypeStartSleep
